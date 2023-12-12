@@ -7,6 +7,8 @@
 <body>
 
 <?php
+try 
+{
 $dsn ='mysql:dbname=phpkiso;host=localhost';
 $user ='root';
 $password ='';
@@ -46,6 +48,12 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute();
 
 $dbh = null;
+}
+
+catch(Exception $e)
+{
+    print'ただいま障害により大変ご迷惑おかけしております。';
+}
 ?>
 </body>
 </html>
